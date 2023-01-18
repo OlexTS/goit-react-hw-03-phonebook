@@ -16,6 +16,13 @@ class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+  console.log('mount');
+  }
+  componentDidUpdate() {
+    console.log('update');
+  }
+
   addContact = ({ name, number }) => {
     const contact = { id: nanoid(), name, number };
     this.state.contacts.some(
