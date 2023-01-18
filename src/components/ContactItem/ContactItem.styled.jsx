@@ -3,6 +3,11 @@ import styled from '@emotion/styled';
 export const Item = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border: 2px solid brown;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 5px;
 `;
 
 export const ContactName = styled.p`
