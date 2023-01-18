@@ -17,10 +17,17 @@ class App extends Component {
   };
 
   componentDidMount() {
-  console.log('mount');
+    const contacts = localStorage.getItem('Contact');
+    const parseContacts = JSON.parse(contacts);
+    if (parseContacts) {
+      this.setState({ contacts: parseContacts });
+    }
   }
-  componentDidUpdate() {
-    console.log('update');
+
+  componentDidUpdate(nextProps, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('Contact', JSON.stringify(this.state.contacts));
+    }
   }
 
   addContact = ({ name, number }) => {
